@@ -351,6 +351,41 @@ header .scoreBoard .player2 {
   width: 2.5rem;
   height: 2.5rem;
 }
+/* 
+@media (min-width: 668px) {
+  #app {
+    width: 30rem;
+    height: 80%;
+  }
+
+  #app .container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 700px) {
+  #app {
+    width: 30rem;
+    height: 90%;
+  }
+
+  #app .container {
+    width: 90%;
+    height: 50%;
+  }
+}
+
+@media (min-width: 800px) {
+  #app {
+    width: 30rem;
+    height: 60%;
+  }
+
+  #app .container {
+    width: 100%;
+    height: 50%;
+  }
+}
 
 
 @media (min-width: 1024px) {
@@ -401,4 +436,4 @@ header .scoreBoard .player2 {
     padding-bottom: 1rem;
     box-shadow: 6px 8px 11px 3px rgb(0 0 0 / 30%);
   }
-}
+} */
