@@ -11,17 +11,20 @@ localStorage.setItem("isAudioOn", true);
  */
 function turnAudiOnOff(isOn) {
 
-    const gameSoundButton = document.querySelector("#audioButton img.audio");
+    const gameSoundButton = document.querySelector("#audioButton #audio");
 
     gameSoundButton?.addEventListener("click", () => {
         if (!isOn) {
             isOn = true;
             localStorage.setItem("isAudioOn", false);
-            gameSoundButton.setAttribute("src", "./assets/icons/audioOff.jpg");            
+            gameSoundButton.querySelector("img").setAttribute("src", "./assets/icons/audioOff.svg");
+            gameSoundButton.classList.add('active') 
+
         } else {
             isOn = false;
             localStorage.setItem("isAudioOn", true);
-            gameSoundButton.setAttribute("src", "./assets/icons/audioOn.jpg");            
+            gameSoundButton.querySelector("img").setAttribute("src", "./assets/icons/audioOn.svg");     
+            gameSoundButton.classList.remove('active')        
         }
     });
 
@@ -58,7 +61,7 @@ autoPlayMusicOnce();
  */
 function turnMusicOn(isOn) {
 
-    const gameMusicButton = document.querySelector("#audioButton img.music");
+    const gameMusicButton = document.querySelector("#audioButton #music");
 
     gameMusicButton?.addEventListener("click", () => {
 
@@ -66,13 +69,14 @@ function turnMusicOn(isOn) {
             isOn = true;
             localStorage.setItem("isMusicOn", isOn);
             music.pause();
-            gameMusicButton.setAttribute("src", "./assets/icons/musicOff.jpg");
-
+            gameMusicButton.querySelector("img").setAttribute("src", "./assets/icons/musicOff.svg");
+            gameMusicButton.classList.add('active')
         } else {
             isOn = false;
             localStorage.setItem("isMusicOn", isOn);
             music.play();
-            gameMusicButton.setAttribute("src", "./assets/icons/musicOn.jpg");
+            gameMusicButton.querySelector("img").setAttribute("src", "./assets/icons/musicOn.svg");
+            gameMusicButton.classList.remove('active')    ;       
         }
     });
 }
