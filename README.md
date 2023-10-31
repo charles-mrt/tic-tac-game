@@ -14,7 +14,7 @@
 
 <br>
 <p align="center">
-  <img alt="jogo-da-velha" src=".github/preview.gif" width="70%">
+  <img alt="jogo-da-velha" src=".github/preview.jpg" width="70%">
 </p>
 
 ## 🚀 Tecnologias
@@ -68,7 +68,8 @@ Para jogar o Jogo da Velha,  <a href="https://charles-mrt.github.io/tic-tac-game
 
 ## 📱 Próxima Versão: Suporte a Dispositivos Móveis
 
-## :memo: Licença
+
+## memo: Licença
 
 Este projeto está sob a licença MIT.
 
