@@ -4,6 +4,9 @@
   --light-blue: #beb4d6;
   --light-blue2: #ae9ed5;
   --light-green: #afffde;
+
+  /* 1rem = 10px*/
+  font-size: 62%;
 }
 
 body {
@@ -23,21 +26,30 @@ body {
 
 * {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#appWrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 button {
   width: auto;
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 8rem;
   font-weight: bold;
   color: var(--main-white);
   background: var(--light-pink);
   border: 0;
-  border-radius: .4rem;
+  border-radius: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: background .3s;
 }
+
 button:hover {
   background-color: var(--light-blue2);
 }
@@ -71,140 +83,145 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  gap: .3rem;
-  padding: 1rem;
-  height: 20rem;
+  gap: 3rem;
+
+  padding: 3rem;
+  height: 70rem;
+  width: auto;
+  margin: 2rem;
 
   text-align: center;
-  border-radius: .5rem;
+
+  border-radius: 2rem;
   box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
   background-color: var(--light-green);
 
 }
 
 #modal.show div h4 {
-  font-size: 3rem;
+  font-size: 12rem;
   margin: 0;
 }
 
 #modal.show div h3 {
-  font-size: 2rem;
+  font-size: 10rem;
   margin: 0;
 }
-
+button.closeModal {
+  font-size: 6rem;
+  padding: 5rem;
+}
 button.closeModal:hover {
   background-color: var(--light-blue);
 }
 
 
 #app {
-  width: 100vw;
-  height: 100vh;
-
-  background: #fcfcda;
+  width: 100%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0;
+  justify-content: space-between;
+
+  background: #fcfcda;
 }
 
-#app header {
-  width: 90%;
-  text-align: center; 
-  margin-top: 1rem;
-}
-
-#app header h1 {
-  color: var(--light-pink);
-  text-shadow: 5px 6px 5px rgb(0 0 0 / 21%);
-  font-size: 2rem;
-  margin: 0;
-}
-
-#app header h3 {
-  font-size: 2rem;
-  color: var(--light-pink);
-  padding: 0;
-  margin: 0;
-}
-
-#app header .scoreBoard {
-  position: relative;
+#app #header {
   width: 100%;
-
-  padding: .5rem 0;
-  border-radius: .3rem;
+  height: 33.33%;
+  text-align: center;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: .5rem;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#app #header h1 {
+  color: var(--light-pink);
+  text-shadow: 5px 6px 5px rgb(0 0 0 / 21%);
+  font-size: 10rem;
+  margin: 0;
+  padding: 0;
+}
 
-  font-size: 1.2rem;
+#app #header h3 {
+  font-size: 8rem;
+  color: var(--light-pink);
+  margin: 0;
+  padding: 0;
+}
+#app #header .scoreBoard {
+  position: relative;
+
+  padding: 3rem 0;
+  border-radius: 2rem;
+  margin: 1rem;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+ 
+  font-size: 5rem;
   text-transform: uppercase;
 
   background: var(--light-pink);
-  border: 4px solid #c7f6d4;
+  border: 5px solid #c7f6d4;
   color: var(--main-white);
 
   box-shadow: 6px 8px 11px 3px rgb(0 0 0 / 21%);
 }
 
 
-header .scoreBoard .player1,
-header .scoreBoard .player2 {
+#header .scoreBoard .player1,
+#header .scoreBoard .player2 {
   color: var(--light-pink);
   background: #fcfcda;
-  padding: .2rem;
-  border-radius: 3px;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
-#app header .scoreBoard .ressetPlayerPoints {
+#header .scoreBoard .ressetPlayerPoints {
   position: absolute;
-  left: -0.95rem;
-  top: -0.95rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  left: -3rem;
+  top: -3rem;
+
+  width: 6rem;
+  height: 6rem;
+  padding: 1rem;
+
   border-radius: 100%;
-  padding: .2rem;
-  border: 2px solid var(--light-green);
+
+  border: 3px solid var(--light-green);
   background: var(--light-pink);
- 
-  transition: background .3s; 
+
+  transition: background .3s;
   cursor: pointer;
 }
 
-#app header .scoreBoard .ressetPlayerPoints:hover {
+#header .scoreBoard .ressetPlayerPoints:hover {
   background-color: var(--light-blue2);
 }
 
-#app .container {
+
+#app #container .main {
   width: 100%;
-  height: 50%;
+  height: 100%;
+  width: 900px;
+  height: 900px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#app .container .main {
-  height: 90%;
-  width: 90%;
-  position: relative;
   overflow: hidden;
+  position: relative;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: .5rem;
+  gap: 1rem;
 
   border-radius: 8px;
   background: #c0b6c3;
   box-shadow: 6px 8px 11px 3px rgb(0 0 0 / 21%);
 }
-
-.container .main span {
+#container .main span {
   width: 100%;
   height: 100%;
   background: #c7f6d4;
@@ -215,17 +232,17 @@ header .scoreBoard .player2 {
 }
 
 
-.main span span.circle {
-  width: 3.5rem;
-  height: 3.5rem;
-  border: .5rem solid #bc95c9;
+#container .main .circle {
+  width: 14rem;
+  height: 14rem;
+  border: 2rem solid #bc95c9;
   border-radius: 100%;
   box-shadow: 4px -3px 10px 1px rgb(0 0 0 / 30%);
 }
 
-.main span span.cross {
-  width: 4rem;
-  height: 4rem;
+#container .main .cross {
+  width: 17rem;
+  height: 17rem;
 }
 
 .cross:before,
@@ -233,17 +250,17 @@ header .scoreBoard .player2 {
   content: "";
   height: 100%;
   background-color: #fa95b7;
-  border: 0.3rem solid #fa95b7;
+  border: 1rem solid #fa95b7;
   box-shadow: 4px -3px 10px 1px rgb(0 0 0 / 30%);
 }
-
 .cross:before {
   transform: translateX(0.2rem) rotate(45deg);
 }
-
 .cross:after {
   transform: translateX(-0.3rem) rotate(-45deg);
 }
+
+
 
 .winLineContainer {
   position: absolute;
@@ -279,7 +296,7 @@ header .scoreBoard .player2 {
   transform: rotate(0deg);
 }
 
-.winLineContainer .linePosition[data-position="col-1"]{
+.winLineContainer .linePosition[data-position="col-1"] {
   align-items: flex-start;
   transform: rotate(-90deg);
 }
@@ -316,14 +333,25 @@ header .scoreBoard .player2 {
 .winLineContainer .winLineElement {
   width: 95%;
   background-color: #95a1fa;
-  border: .2rem solid #95a1fa;
+  border: 1rem solid #95a1fa;
   box-shadow: 0px 0px 5px 2px #e8dff5;
 }
 
-#audioButton {
-  margin-top: 1rem;
+
+
+#app #footer {
+  width: 100%;
+  height: 33.33%;
+  
   display: flex;
-  gap: 1rem
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#audioButton {
+  display: flex;
+  gap: 2rem
 }
 
 #audioButton button#music,
@@ -332,12 +360,11 @@ header .scoreBoard .player2 {
   align-items: center;
   justify-content: center;
 
-  width: 4rem;
-  height: 4rem;
+  padding: 2rem;
 
   background-color: transparent;
-  border: .3rem solid var(--light-green);
-  border-radius: .5rem;
+  border: .7rem solid var(--light-green);
+  border-radius: 2rem;
   background: var(--light-pink);
   transition: none;
 }
@@ -348,92 +375,6 @@ header .scoreBoard .player2 {
 }
 
 #audioButton img {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 7rem;
+  height: 7rem;
 }
-/* 
-@media (min-width: 668px) {
-  #app {
-    width: 30rem;
-    height: 80%;
-  }
-
-  #app .container {
-    width: 100%;
-  }
-}
-
-@media (min-width: 700px) {
-  #app {
-    width: 30rem;
-    height: 90%;
-  }
-
-  #app .container {
-    width: 90%;
-    height: 50%;
-  }
-}
-
-@media (min-width: 800px) {
-  #app {
-    width: 30rem;
-    height: 60%;
-  }
-
-  #app .container {
-    width: 100%;
-    height: 50%;
-  }
-}
-
-
-@media (min-width: 1024px) {
-  #app {
-    width: 25rem;
-    height: 90%;
-  }
-
-}
-
-@media (min-width: 1280px) {
-
-  #app {
-    width: 22rem;
-    height: 85%;
-    border-radius: .5rem;
-    box-shadow: 6px 8px 11px 3px rgb(0 0 0 / 30%);
-  }
-
-  #app .container {
-    width: 100%;
-    height: 100%;
-  }
-  #app .container .main {
-    gap: .3rem;
-  }
-}
-
-@media screen and (min-width: 1280px) and (min-height: 950px) {
-
-  #app {
-    width: 30rem;
-    height: 85%;
-    border-radius: .5rem;
-    box-shadow: 6px 8px 11px 3px rgb(0 0 0 / 30%);
-  }
-  #app .container .main {
-    gap: .3rem;
-  }
-} 
-
-@media (min-width: 1920px) {
-
-  #app {
-    width: 25rem;
-    height: 70%;
-    border-radius: .5rem;
-    padding-bottom: 1rem;
-    box-shadow: 6px 8px 11px 3px rgb(0 0 0 / 30%);
-  }
-} */

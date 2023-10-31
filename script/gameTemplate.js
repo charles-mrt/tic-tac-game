@@ -12,7 +12,7 @@ function gameTemplate(gamePosition = "") {
   const gameTemplate = `
         <div id="modal"></div>
         <section id="app">
-            <header>
+            <header id="header">
                 <h1>tic tac candy</h1>                             
                 <div>
                   <h3>Pontos</h3>
@@ -24,7 +24,7 @@ function gameTemplate(gamePosition = "") {
               </div>            
             </header>
             
-            <div class="container">
+            <div id="container">
 
                 <div class="main">
                   ${gamePosition}
@@ -40,12 +40,14 @@ function gameTemplate(gamePosition = "") {
                 </div>
             </div>
 
-            <button class="clearGame">Reiniciar o game</button>
-            
-            <div id="audioButton">
-                <button id="music" type="button"><img class="music"  src="./assets/icons/musicOn.svg"></button>
-                <button id="audio" type="button"><img class="audio"  src="./assets/icons/audioOn.svg"></button>
-            </div>
+            <footer id="footer">
+              <button class="clearGame">Reiniciar o game</button>
+              
+              <div id="audioButton">
+                  <button id="music" type="button"><img class="music"  src="./assets/icons/musicOn.svg"></button>
+                  <button id="audio" type="button"><img class="audio"  src="./assets/icons/audioOn.svg"></button>
+              </div>
+            </footer>
         </section>
     `
 
